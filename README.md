@@ -1,29 +1,18 @@
 # Lab-2-Tunley
 
-# Project 2 - *Name of App Here*
 
-Submitted by: **Your Name Here**
+Submitted by: **Angel Zambrano**
 
-**Name of your app** is a movie browsing app that... [TODO] 
+**Tunely* is a song browsing app that... [TODO] 
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] Users are able to see a customized app icon and launch screen
-- [x] Your app should work for any screen size and orientation using AutoLayout constraints
-- [x] Mark here if you will demostrate auto layout implemention as horizontal rotation or different phone size or both, then erase this text
-- [x] Displays at least 5 different movies in a table view
-- [x] Can tap into detail view of movie with a full description, backdrop image, and title
- 
-
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
-
+- [x] User can view songs 
+- [x] User can view song details
 
 
 ## Notes
