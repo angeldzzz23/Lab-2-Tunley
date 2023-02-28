@@ -20,12 +20,7 @@ class ViewController: UIViewController {
     
         
     var tracks: [Track] = []
-    
-    
-       
-    
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,7 +45,6 @@ class ViewController: UIViewController {
             tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
-
 
 }
 
@@ -80,9 +74,7 @@ extension ViewController: UITableViewDataSource {
         return cell
 
     }
-    
-    
-    
+ 
 }
 
 
