@@ -14,6 +14,7 @@
 		1C01B6E429AE6BD70015E833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C01B6E229AE6BD70015E833 /* LaunchScreen.storyboard */; };
 		1C01B6EC29AE776C0015E833 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C01B6EB29AE776C0015E833 /* SongTableViewCell.swift */; };
 		1C01B6F129AE9D180015E833 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C01B6F029AE9D180015E833 /* Track.swift */; };
+		1C01B6F329AEA43C0015E833 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C01B6F229AEA43C0015E833 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1C01B6E529AE6BD70015E833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C01B6EB29AE776C0015E833 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		1C01B6F029AE9D180015E833 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		1C01B6F229AEA43C0015E833 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				1C01B6DB29AE6BD60015E833 /* ViewController.swift */,
+				1C01B6F229AEA43C0015E833 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				1C01B6EC29AE776C0015E833 /* SongTableViewCell.swift in Sources */,
 				1C01B6F129AE9D180015E833 /* Track.swift in Sources */,
 				1C01B6DC29AE6BD60015E833 /* ViewController.swift in Sources */,
+				1C01B6F329AEA43C0015E833 /* DetailViewController.swift in Sources */,
 				1C01B6D829AE6BD60015E833 /* AppDelegate.swift in Sources */,
 				1C01B6DA29AE6BD60015E833 /* SceneDelegate.swift in Sources */,
 			);

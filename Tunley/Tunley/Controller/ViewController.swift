@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
         
     var tracks: [Track] = []
+    
+    
        
     
     
@@ -61,6 +63,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selecting row")
+        navigationController?.pushViewController(DetailViewController(track: tracks[indexPath.row]), animated: true)
     }
     
 }
