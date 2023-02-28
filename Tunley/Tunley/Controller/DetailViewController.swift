@@ -23,13 +23,12 @@ class DetailViewController: UIViewController {
     var fView: UIView = {
        let fView = UIView()
        fView.translatesAutoresizingMaskIntoConstraints = false
-       fView.backgroundColor = .yellow
+
        return fView
     }()
     
     var songImgview: UIImageView = {
         var imageView = UIImageView()
-        imageView.backgroundColor = .green
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -185,6 +184,25 @@ class DetailViewController: UIViewController {
 //
 //            // Use helper method to convert milliseconds into `mm:ss` string format
             duratonLbl.text = formattedTrackDuration(with: track.trackTimeMillis)
+        
+        Task {
+//            NetworkManager.fetchImage(from: self.track.artworkUrl100)
+            do {
+                let image = try await NetworkManager.fetchImage(from: self.track.artworkUrl100)
+                DispatchQueue.main.async {
+                    self.songImgview.image = image
+
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+            
+        }
+        // fetching the image
+       
+        
     }
     
 
