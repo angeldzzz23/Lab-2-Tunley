@@ -30,8 +30,12 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        setUp()
+      
+    }
+    
+    func setUp() {
         // set up the tableview
-        
         view.addSubview(tableview)
         tableview.dataSource = self
         tableview.delegate = self
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
     }
 
 }
+
 
 extension ViewController: UITableViewDelegate {
     
@@ -66,10 +71,32 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tracks.count
     }
+    func setCellImage(indexpath: IndexPath, cell: SongTableViewCell) {
+        let track = tracks[indexpath.row]
+        cell.configure(with: track)
+        
+        
+        Task {
+//            NetworkManager.fetchImage(from: self.track.artworkUrl100)
+            do {
+                let image = try await NetworkManager.fetchImage(from: track.artworkUrl100)
+                DispatchQueue.main.async {
+
+                    cell.initializing(image: image)
+                }
+
+            } catch {
+                print(error)
+            }
+
+        }
+    
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: SongTableViewCell.identifier, for: indexPath) as! SongTableViewCell
-        cell.configure(with: tracks[indexPath.row])
+        setCellImage(indexpath: indexPath, cell: cell)
         
         return cell
 

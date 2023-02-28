@@ -162,28 +162,17 @@ class DetailViewController: UIViewController {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
             setUp()
         
+    
+        SettingExtractedData()
         
         
-        
-//            // Set labels with the associated track values.
-            trackName.text = track.trackName
-            artistLbl.text = track.artistName
-            albumLbl.text = track.collectionName
-            
-            genreLbl.text = track.primaryGenreName
-//
-//            // Create a date formatter to style our date and convert it to a string
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            releaseDateLbl.text = dateFormatter.string(from: track.releaseDate)
-//
-//            // Use helper method to convert milliseconds into `mm:ss` string format
-            duratonLbl.text = formattedTrackDuration(with: track.trackTimeMillis)
         
         Task {
 //            NetworkManager.fetchImage(from: self.track.artworkUrl100)
@@ -191,25 +180,39 @@ class DetailViewController: UIViewController {
                 let image = try await NetworkManager.fetchImage(from: self.track.artworkUrl100)
                 DispatchQueue.main.async {
                     self.songImgview.image = image
-
                 }
                 
             } catch {
                 print(error)
             }
-            
-            
+
         }
-        // fetching the image
-       
+    
         
+    }
+    
+    fileprivate func SettingExtractedData() {
+        //            // Set labels with the associated track values.
+        trackName.text = track.trackName
+        artistLbl.text = track.artistName
+        albumLbl.text = track.collectionName
+        
+        genreLbl.text = track.primaryGenreName
+        //
+        //            // Create a date formatter to style our date and convert it to a string
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        releaseDateLbl.text = dateFormatter.string(from: track.releaseDate)
+        //
+        //            // Use helper method to convert milliseconds into `mm:ss` string format
+        duratonLbl.text = formattedTrackDuration(with: track.trackTimeMillis)
     }
     
 
     
     
     
-    private func setUp() {
+    fileprivate func setUp() {
         view.addSubview(verticalSV)
         NSLayoutConstraint.activate([
             verticalSV.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
@@ -252,11 +255,6 @@ class DetailViewController: UIViewController {
         verticalSV.addArrangedSubview(self.durationTitleLbl)
         verticalSV.addArrangedSubview(self.duratonLbl)
 
-
-
-        
-        
-        
 
         
     }

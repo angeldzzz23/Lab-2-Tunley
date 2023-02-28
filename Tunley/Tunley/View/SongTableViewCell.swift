@@ -86,6 +86,10 @@ class SongTableViewCell: UITableViewCell {
         
     }
     
+    // this is called to initialize the image
+    func initializing(image: UIImage) {
+        self.songConverImageView.image = image
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
