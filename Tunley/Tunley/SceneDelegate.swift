@@ -20,8 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
         let window = UIWindow(windowScene: windowScene)
-        let rootVC = ViewController()
-        window.rootViewController = UINavigationController(rootViewController: rootVC)
+        // music.note.list
+            
+            
+        let rootVC = tabBarController()
+            
+        window.rootViewController = rootVC
         self.window = window
         window.makeKeyAndVisible ()
         }

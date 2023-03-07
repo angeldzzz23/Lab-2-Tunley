@@ -15,14 +15,12 @@ class API {
         guard var url  = URLComponents(string: "https://itunes.apple.com/search?term=blackpink&attribute=artistTerm&entity=song&media=music") else {return}
         
         
-        
         var request = URLRequest(url: url.url!)
           
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         
-
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
               if let error = error {
                   completion(.failure(error))
@@ -31,7 +29,6 @@ class API {
                       let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
                       
                       print(responseJSON)
-                      
                       
                       let decoder = JSONDecoder()
                       // Create a date formatter
@@ -56,9 +53,6 @@ class API {
 
           task.resume()
           }
-    
-    
-    
     
 }
 
