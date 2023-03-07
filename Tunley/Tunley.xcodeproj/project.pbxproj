@@ -17,6 +17,9 @@
 		1C01B6F329AEA43C0015E833 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C01B6F229AEA43C0015E833 /* DetailViewController.swift */; };
 		1C01B6F529AEB2CC0015E833 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C01B6F429AEB2CC0015E833 /* NetworkManager.swift */; };
 		1C34AF6B29B7BAD400103863 /* tabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34AF6A29B7BAD400103863 /* tabBarController.swift */; };
+		1C34AF6D29B7BDD300103863 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34AF6C29B7BDD300103863 /* AlbumViewController.swift */; };
+		1C34AF6F29B7FF0000103863 /* SongsCollectionviewcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34AF6E29B7FF0000103863 /* SongsCollectionviewcell.swift */; };
+		1C34AF7129B8005300103863 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34AF7029B8005300103863 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		1C01B6F229AEA43C0015E833 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1C01B6F429AEB2CC0015E833 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1C34AF6A29B7BAD400103863 /* tabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarController.swift; sourceTree = "<group>"; };
+		1C34AF6C29B7BDD300103863 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		1C34AF6E29B7FF0000103863 /* SongsCollectionviewcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionviewcell.swift; sourceTree = "<group>"; };
+		1C34AF7029B8005300103863 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			children = (
 				1C01B6F029AE9D180015E833 /* Track.swift */,
 				1C01B6F429AEB2CC0015E833 /* NetworkManager.swift */,
+				1C34AF7029B8005300103863 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1C01B6EB29AE776C0015E833 /* SongTableViewCell.swift */,
+				1C34AF6E29B7FF0000103863 /* SongsCollectionviewcell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 				1C01B6DB29AE6BD60015E833 /* ViewController.swift */,
 				1C01B6F229AEA43C0015E833 /* DetailViewController.swift */,
 				1C34AF6A29B7BAD400103863 /* tabBarController.swift */,
+				1C34AF6C29B7BDD300103863 /* AlbumViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,12 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C34AF7129B8005300103863 /* API.swift in Sources */,
 				1C01B6EC29AE776C0015E833 /* SongTableViewCell.swift in Sources */,
 				1C34AF6B29B7BAD400103863 /* tabBarController.swift in Sources */,
 				1C01B6F129AE9D180015E833 /* Track.swift in Sources */,
+				1C34AF6D29B7BDD300103863 /* AlbumViewController.swift in Sources */,
 				1C01B6DC29AE6BD60015E833 /* ViewController.swift in Sources */,
 				1C01B6F529AEB2CC0015E833 /* NetworkManager.swift in Sources */,
 				1C01B6F329AEA43C0015E833 /* DetailViewController.swift in Sources */,
+				1C34AF6F29B7FF0000103863 /* SongsCollectionviewcell.swift in Sources */,
 				1C01B6D829AE6BD60015E833 /* AppDelegate.swift in Sources */,
 				1C01B6DA29AE6BD60015E833 /* SceneDelegate.swift in Sources */,
 			);
