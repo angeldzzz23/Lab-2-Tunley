@@ -7,18 +7,6 @@
 
 import UIKit
 
-
-//func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//    return 10
-//}
-//
-//func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "peopleCellReuseIdentifier", for: indexPath) as! UICollectionViewCell
-//    cell.backgroundColor = .yellow
-//
-//    return cell
-//}
-
 class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   
