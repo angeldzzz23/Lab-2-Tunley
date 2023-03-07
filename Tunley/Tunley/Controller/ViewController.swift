@@ -31,8 +31,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-
-        
         view.backgroundColor = .white
         
         setUp()
@@ -49,7 +47,6 @@ class ViewController: UIViewController {
                     
                     self.tracks = s.results
                     self.tableview.reloadData()
-                    
                     
                 }
                     

@@ -26,6 +26,10 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     private var peopleCollectionView: UICollectionView! // the collection that displays people
     private let peopleCellReuseIdentifier = "peopleCellReuseIdentifier"
     private let pCellPadding:CGFloat = 3
+    
+    var tracks: [Track] = []
+    
+    
 
     
     override func viewDidLoad() {
@@ -42,7 +46,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         peopleCollectionView = UICollectionView(frame: .zero, collectionViewLayout: peopleLayout)
         peopleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        peopleCollectionView.backgroundColor = .red
+        peopleCollectionView.backgroundColor = .clear
         view.addSubview(peopleCollectionView)
         
         peopleCollectionView.dataSource = self
@@ -52,24 +56,75 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         peopleCollectionView.register(SongsCollectionviewcell.self, forCellWithReuseIdentifier: SongsCollectionviewcell.identifier)
         
         NSLayoutConstraint.activate([
-            peopleCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            peopleCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            peopleCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 3),
+            peopleCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -3),
             peopleCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             peopleCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
         
+        // fetching data from the api
+        
+        
+        //
+        API.gettingSongs { resuls in
+            switch resuls {
+            case .failure(let errror):
+                
+                
+                print(errror.localizedDescription)
+            case .success(let s):
+                
+                DispatchQueue.main.async {
+                    
+                    self.tracks = s.results
+                    self.peopleCollectionView.reloadData()
+                    
+                }
+                    
+            }
+        }
+        
     }
     
     
-    
+    func configure(collectionView: SongsCollectionviewcell, at indexpath: IndexPath) {
+        //
+        let track = tracks[indexpath.item]
+//        collectionView.imageView
+        Task {
+            
+            do {
+                var url = URL(string: track.artworkUrl100)
+                let image = try await NetworkManager.fetchImage(from: url!)
+                DispatchQueue.main.async {
+
+                    collectionView.configure(img: image)
+                }
+
+            } catch {
+                print(error)
+            }
+
+        }
+        
+        
+    }
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return tracks.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row, indexPath.item)
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongsCollectionviewcell.identifier, for: indexPath) as! SongsCollectionviewcell
+        
+        configure(collectionView: cell, at: indexPath)
+        
+        
+        
         
        
            return cell
@@ -79,7 +134,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = ((collectionView.frame.width) - (pCellPadding) ) / 3
         
-        return CGSize(width:size - 3, height: size - 3 )
+        return CGSize(width:size - 1, height: size - 1 )
     }
     
     
