@@ -14,7 +14,6 @@ class SongsCollectionviewcell: UICollectionViewCell {
     let imageView: UIImageView = {
         let imgView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
-        imgView.backgroundColor = .green
         return imgView
     }()
     
