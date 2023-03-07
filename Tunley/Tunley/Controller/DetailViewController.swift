@@ -159,10 +159,7 @@ class DetailViewController: UIViewController {
       }
 
     
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,7 +174,8 @@ class DetailViewController: UIViewController {
         Task {
 //            NetworkManager.fetchImage(from: self.track.artworkUrl100)
             do {
-                let image = try await NetworkManager.fetchImage(from: self.track.artworkUrl100)
+                var url = URL(string: self.track.artworkUrl100)
+                let image = try await NetworkManager.fetchImage(from: url!)
                 DispatchQueue.main.async {
                     self.songImgview.image = image
                 }
@@ -205,7 +203,7 @@ class DetailViewController: UIViewController {
         releaseDateLbl.text = dateFormatter.string(from: track.releaseDate)
         //
         //            // Use helper method to convert milliseconds into `mm:ss` string format
-        duratonLbl.text = formattedTrackDuration(with: track.trackTimeMillis)
+        duratonLbl.text = String(formattedTrackDuration(with: track.trackTimeMillis))
     }
     
 
